@@ -8,7 +8,7 @@ class Contact {
   index = async (req, res) => {
     try {
       const contacts = await db.Contact.findAll();
-      if (contacts) {
+      if (contacts.length) {
         res.status(200).json({
           message: "success get all data",
           data: contacts,
