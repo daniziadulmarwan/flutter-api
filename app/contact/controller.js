@@ -33,9 +33,14 @@ class Contact {
         where: { id: id },
       });
       if (contact) {
-        return res.status(200).json({
+        res.status(200).json({
           message: "success get data",
           data: contact,
+        });
+      } else {
+        res.status(503).json({
+          message: "data not found",
+          data: {},
         });
       }
     } catch (error) {
@@ -57,8 +62,12 @@ class Contact {
         avatar,
       });
       if (dataCreated) {
-        return res.status(201).json({
+        res.status(201).json({
           message: "success create data",
+        });
+      } else {
+        res.status(301).json({
+          message: "failed create data",
         });
       }
     } catch (error) {
@@ -87,7 +96,7 @@ class Contact {
       const result = await contact.save();
 
       if (result) {
-        return res.status(200).json({
+        res.status(200).json({
           message: "success update data",
         });
       }
@@ -105,15 +114,13 @@ class Contact {
         where: { id: id },
       });
 
-      console.log(contact);
-
       if (contact) {
-        return res.status(200).json({
+        res.status(200).json({
           message: "success delete data",
         });
       }
     } catch (error) {
-      return res.status(400).json({
+      res.status(400).json({
         meesage: error.meesage,
       });
     }
