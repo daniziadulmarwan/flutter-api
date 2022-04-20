@@ -15,6 +15,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/", (req, res) => {
+  res.send("hello");
+});
+
 app.use("/api/v1/contact", contactRouter);
 
 module.exports = app;
