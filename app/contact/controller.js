@@ -14,7 +14,10 @@ class Contact {
           data: contacts,
         });
       } else {
-        return [];
+        res.status(503).json({
+          message: "data is empty",
+          data: [],
+        });
       }
     } catch (error) {
       res.status(400).json({
