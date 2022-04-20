@@ -1,0 +1,56 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+}
+
+.route {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18;
+}
+
+.route span {
+  margin-left: 5;
+}
+
+.api {
+  margin-left: 0;
+}
+
+.api ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.api ul li {
+  font-size: 18px;
+}
+
+.api ul li span {
+  font-weight: bold;
+}
+
+.red {
+  color: rgb(177, 6, 6);
+}
+
+.green {
+  color: rgb(10, 139, 10);
+}
+
+.yellow {
+  color: rgb(240, 240, 16);
+}
+
+.blue {
+  color: rgb(15, 15, 252);
+}
